@@ -61,8 +61,8 @@ Ignitera/
 ```
 ## ⚙️ Technologies Used
 
-- **HTML5** — for structure and layout  
-- **CSS3** — for modern, responsive styling  
-- **JavaScript (Vanilla)** — for interactivity and logic  
-- **Git & GitHub** — for version control and deployment  
+- **HTML5** — for structure and layout.  
+- **CSS3** — for modern, responsive styling.  
+- **JavaScript (Vanilla)** — for interactivity and logic.  
+- **Git & GitHub** — for version control and deployment.  
 ```
