@@ -34,17 +34,17 @@ It combines education, gamification, and progress tracking to create a fun and e
     </tr>
     <tr>
         <td align="center" width="50%">
-            <img src="assets/screenshots/teacher-dashboard.png" alt="Teacher Dashboard screenshot" />
+            <img src="" alt="Teacher Dashboard screenshot" />
             <br /><strong>Teacher Dashboard</strong><br />Teacher view for managing courses, progress, quizzes, and class notes.
         </td>
         <td align="center" width="50%">
-            <img src="assets/screenshots/quiz-game-page.png" alt="Quiz/Game Page screenshot" />
+            <img src="" alt="Quiz/Game Page screenshot" />
             <br /><strong>Quiz/Game Page</strong><br />Game hub with interactive learning challenges that award XP.
         </td>
     </tr>
     <tr>
         <td align="center" width="50%" colspan="2">
-            <img src="assets/screenshots/leaderboard-page.png" alt="Leaderboard Page screenshot" />
+            <img src="" alt="Leaderboard Page screenshot" />
             <br /><strong>Leaderboard Page</strong><br />Competitive rankings that highlight top performers and achievements.
         </td>
     </tr>
