@@ -232,3 +232,147 @@ body {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ===== Mobile Responsiveness ===== */
+
+/* Tablet (max 768px) */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .navbar {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .xp-bar {
+    width: 100px;
+  }
+
+  .profile-text p,
+  .profile-text small {
+    font-size: 0.8rem;
+  }
+
+  /* Welcome */
+  .welcome {
+    margin: 20px 16px 0;
+    padding: 20px 16px;
+  }
+
+  .welcome h2 {
+    font-size: 1.4rem;
+  }
+
+  /* Section title */
+  .section-title {
+    margin: 24px 16px 10px;
+  }
+
+  /* Cards */
+  .main-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 0 16px;
+  }
+
+  .card {
+    padding: 24px 12px;
+    font-size: 1.1rem;
+  }
+
+  /* Notes */
+  .notes {
+    margin: 24px 16px 0;
+  }
+
+  /* Motivation */
+  .motivation-corner {
+    margin: 24px 16px 24px;
+  }
+}
+
+/* Mobile (max 480px) */
+@media (max-width: 480px) {
+
+  /* Navbar stacks vertically */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .xp-section {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .xp-bar {
+    width: 120px;
+  }
+
+  .profile {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Welcome */
+  .welcome {
+    margin: 14px 12px 0;
+    padding: 16px 12px;
+  }
+
+  .welcome h2 {
+    font-size: 1.2rem;
+  }
+
+  .streak-box {
+    font-size: 0.9rem;
+  }
+
+  /* Section title */
+  .section-title {
+    margin: 20px 12px 8px;
+    font-size: 1rem;
+  }
+
+  /* Cards - single column on very small screens */
+  .main-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0 12px;
+  }
+
+  .card {
+    padding: 20px 10px;
+    font-size: 1rem;
+    min-height: 80px; /* better touch targets */
+  }
+
+  /* Notes */
+  .notes {
+    margin: 20px 12px 0;
+    padding: 16px 12px;
+  }
+
+  #note-input {
+    font-size: 1rem; /* prevents zoom on iOS */
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  /* Motivation */
+  .motivation-corner {
+    margin: 20px 12px 20px;
+    padding: 16px 12px;
+  }
+
+  .motivation-corner p {
+    font-size: 0.95rem;
+  }
+}
