@@ -8,7 +8,31 @@
 
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+/* Dark Mode */
+body.dark { background: linear-gradient(180deg, #0f0c29 0%, #1a1a2e 100%) !important; color: #f0f0f0 !important; }
+body.dark .wrap { background: #1a1a2e !important; }
+body.dark .panel { background: #13132a !important; border-color: #2a2a50 !important; }
+body.dark .brand h1, body.dark .brand p { color: #f0f0f0 !important; }
+body.dark .stat, body.dark .card, body.dark .info-card { background: #1e1e3f !important; color: #f0f0f0 !important; }
+body.dark h1, body.dark h2, body.dark h3, body.dark p, body.dark span, body.dark small { color: #f0f0f0 !important; }
+body.dark .muted, body.dark [style*="color:#"] { color: #ccc !important; }
 
+.dark-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(106, 17, 203, 0.6);
+  border-radius: 50px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #6A11CB;
+  transition: all 0.3s ease;
+}
+.dark-toggle:hover { background: #6A11CB; color: white; }
  <style>
   :root{
     --bg:#f7fafc;
@@ -189,7 +213,7 @@
 
 </head>
 <body>
-
+  <button class="dark-toggle" onclick="toggleDarkMode()" id="darkBtn">🌙 Dark</button>
   <div class="wrap" role="application" aria-label="Elements Catcher game">
     <!-- left panel -->
     <aside class="panel" aria-hidden="false">
@@ -471,6 +495,16 @@
   // Init
   updateUI(); statusMsg.textContent="Ready — press Start";
 })();
+function toggleDarkMode() {
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  localStorage.setItem('darkMode', isDark);
+  document.getElementById('darkBtn').textContent = isDark ? '☀️ Light' : '🌙 Dark';
+}
+if (localStorage.getItem('darkMode') === 'true') {
+  document.body.classList.add('dark');
+  document.getElementById('darkBtn').textContent = '☀️ Light';
+}
 </script>
 
 </body>
