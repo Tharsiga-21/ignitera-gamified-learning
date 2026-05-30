@@ -602,9 +602,58 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+        /* Dark Mode */
+body.dark {
+  background: linear-gradient(135deg, #0f0c29 0%, #1a1a2e 100%);
+}
+body.dark .header,
+body.dark .auth-card,
+body.dark .overview-panel {
+  background: rgba(20, 20, 40, 0.95);
+  border-color: rgba(106, 17, 203, 0.3);
+}
+body.dark .tabs {
+  background: rgba(15, 15, 30, 0.8);
+}
+body.dark .tab {
+  color: #aaa;
+}
+body.dark .tab.active {
+  color: #a78bfa;
+}
+body.dark .input-field {
+  background: rgba(30, 30, 50, 0.8);
+  color: #f0f0f0;
+}
+body.dark .overview-item {
+  background: rgba(30, 30, 50, 0.6);
+}
+body.dark .overview-text h4 {
+  color: #f0f0f0;
+}
+body.dark .logo-text,
+body.dark .back-link {
+  color: #f0f0f0;
+}
+.dark-toggle {
+  background: none;
+  border: 2px solid #6A11CB;
+  border-radius: 50px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #6A11CB;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+.dark-toggle:hover {
+  background: #6A11CB;
+  color: white;
+}
     </style>
 </head>
 <body>
+    <button class="dark-toggle" onclick="toggleDarkMode()" id="darkBtn">🌙 Dark</button>
     <div class="container">
         <!-- Header with Logo and Back Link -->
         <div class="header">
@@ -925,6 +974,17 @@
             alert("Redirect page not set for this role.");
         }
     }
+        function toggleDarkMode() {
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  localStorage.setItem('darkMode', isDark);
+  document.getElementById('darkBtn').textContent = isDark ? '☀️ Light' : '🌙 Dark';
+}
+
+if (localStorage.getItem('darkMode') === 'true') {
+  document.body.classList.add('dark');
+  document.getElementById('darkBtn').textContent = '☀️ Light';
+}
 </script>
 
 
