@@ -5,11 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Progress | STEM Explorer</title>
   <link rel="stylesheet" href="progress.css">
+  <style>
+/* Dark Mode */
+body.dark { background: #0f0c29 !important; color: #f0f0f0 !important; }
+body.dark .navbar { background: #1a1a2e !important; }
+body.dark .logo { color: #f0f0f0 !important; }
+body.dark .nav-links a { color: #ccc !important; }
+body.dark .nav-links a:hover { color: #39FF14 !important; }
+body.dark .progress-section { background: rgba(30, 30, 60, 0.8) !important; color: #f0f0f0 !important; }
+body.dark .progress-item { color: #f0f0f0 !important; }
+body.dark .progress-bar { background: #2a2a50 !important; }
+body.dark .badges { background: rgba(30, 30, 60, 0.8) !important; color: #f0f0f0 !important; }
+body.dark .badge { background: #2a2a50 !important; color: #f0f0f0 !important; }
+body.dark h2, body.dark h3, body.dark p, body.dark span, body.dark small { color: #f0f0f0 !important; }
+
+.dark-toggle {
+  background: none;
+  border: 2px solid #6A11CB;
+  border-radius: 50px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #6A11CB;
+  transition: all 0.3s ease;
+}
+.dark-toggle:hover { background: #6A11CB; color: white; }
+</style>
 </head>
 <body>
   <!-- Navbar -->
   <div class="navbar">
     <div class="logo">🔥IGNITERA</div>
+    <div class="navbar">
+  <div class="logo">🔥IGNITERA</div>
+  <button class="dark-toggle" onclick="toggleDarkMode()" id="darkBtn">🌙 Dark</button>  <!-- ADD THIS -->
+  <div class="nav-links">
     <div class="nav-links">
       <a href="progress.html">Progress</a>
       <a href="leaderboard.html">Leaderboard</a>
@@ -68,7 +98,19 @@
     <div class="badge">✍️ Language Star</div>
     <div class="badge">🔥 7-Day Streak</div>
   </div>
-
+<script>
+function toggleDarkMode() {
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  localStorage.setItem('darkMode', isDark);
+  document.getElementById('darkBtn').textContent = isDark ? '☀️ Light' : '🌙 Dark';
+}
+if (localStorage.getItem('darkMode') === 'true') {
+  document.body.classList.add('dark');
+  document.getElementById('darkBtn').textContent = '☀️ Light';
+}
+</script>
+<script src="progress.js"></script>
   <script src="progress.js"></script>
 </body>
 </html>
