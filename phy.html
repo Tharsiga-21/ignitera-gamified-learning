@@ -426,6 +426,40 @@
                 justify-content: center;
             }
         }
+        /* Dark Mode */
+body.dark {
+  background: linear-gradient(135deg, #0f0c29 0%, #1a1a2e 100%) !important;
+  color: #f0f0f0 !important;
+}
+body.dark .navbar, body.dark header, body.dark nav {
+  background: rgba(20, 20, 30, 0.95) !important;
+}
+body.dark .card, body.dark .panel, body.dark .box,
+body.dark section, body.dark .container, body.dark .content {
+  background: rgba(30, 30, 50, 0.95) !important;
+  color: #f0f0f0 !important;
+}
+body.dark input, body.dark textarea, body.dark select {
+  background: #1e1e30 !important;
+  color: #f0f0f0 !important;
+  border-color: #444 !important;
+}
+body.dark h1, body.dark h2, body.dark h3,
+body.dark h4, body.dark p, body.dark span,
+body.dark li, body.dark small { color: #f0f0f0 !important; }
+body.dark a { color: #a78bfa !important; }
+
+.dark-toggle {
+  background: none;
+  border: 2px solid #6A11CB;
+  border-radius: 50px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #6A11CB;
+  transition: all 0.3s ease;
+}
+.dark-toggle:hover { background: #6A11CB; color: white; }
     </style>
 </head>
 <body>
@@ -435,6 +469,7 @@
                 <h1>Physics Adventure</h1>
                 <p>Forces & Motion • Grade 8</p>
             </div>
+            <button class="dark-toggle" onclick="toggleDarkMode()" id="darkBtn">🌙 Dark</button>
             
             <div class="dashboard">
                 <div class="dashboard-item">
@@ -980,6 +1015,18 @@
 
         // Initialize the game when the page loads
         window.addEventListener('load', initGame);
+        <script>
+function toggleDarkMode() {
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  localStorage.setItem('darkMode', isDark);
+  document.getElementById('darkBtn').textContent = isDark ? '☀️ Light' : '🌙 Dark';
+}
+if (localStorage.getItem('darkMode') === 'true') {
+  document.body.classList.add('dark');
+  document.getElementById('darkBtn').textContent = '☀️ Light';
+}
+
     </script>
 </body>
 </html>
