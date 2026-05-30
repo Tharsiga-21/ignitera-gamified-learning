@@ -603,6 +603,7 @@ body.dark .footer {
                 <a href="#about" onclick="scrollToSection('about'); toggleMobileMenu()">About</a>
                 <a href="#features" onclick="scrollToSection('features'); toggleMobileMenu()">Features</a>
                 <a href="#contact" onclick="scrollToSection('contact'); toggleMobileMenu()">Contact</a>
+                <button class="dark-toggle" onclick="toggleDarkMode()" id="darkBtnMobile">🌙 Dark</button>
                 <button class="login-btn" onclick="openAuthModal(); toggleMobileMenu()">Login / Sign Up</button>
             </div>
         </div>
@@ -755,16 +756,23 @@ body.dark .footer {
                 card.style.animationDelay = `${index * 0.2}s`;
             });
         });
-        function toggleDarkMode() {
+function toggleDarkMode() {
   document.body.classList.toggle('dark');
   const isDark = document.body.classList.contains('dark');
   localStorage.setItem('darkMode', isDark);
-  document.getElementById('darkBtn').textContent = isDark ? '☀️ Light' : '🌙 Dark';
+  const label = isDark ? '☀️ Light' : '🌙 Dark';
+  document.getElementById('darkBtn').textContent = label;
+  if (document.getElementById('darkBtnMobile')) {
+    document.getElementById('darkBtnMobile').textContent = label;
+  }
 }
 
 if (localStorage.getItem('darkMode') === 'true') {
   document.body.classList.add('dark');
   document.getElementById('darkBtn').textContent = '☀️ Light';
+  if (document.getElementById('darkBtnMobile')) {
+    document.getElementById('darkBtnMobile').textContent = '☀️ Light';
+  }
 }
     </script>
 </body>
