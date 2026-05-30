@@ -4,11 +4,38 @@
   <meta charset="UTF-8">
   <title>Gamified Math Quest</title>
   <link rel="stylesheet" href="mathgame.css">
+  <style>
+/* Dark Mode */
+body.dark { background: #0f0c29 !important; color: #f0f0f0 !important; }
+body.dark .navbar { background: #1a1a2e !important; }
+body.dark .logo { color: #f0f0f0 !important; }
+body.dark .game-container { background: rgba(30, 30, 60, 0.8) !important; color: #f0f0f0 !important; }
+body.dark .game-over { background: rgba(30, 30, 60, 0.8) !important; color: #f0f0f0 !important; }
+body.dark .options button { background: #2a2a50 !important; color: #f0f0f0 !important; border-color: #444 !important; }
+body.dark #feedback, body.dark #timer { color: #f0f0f0 !important; }
+body.dark h2, body.dark p, body.dark small { color: #f0f0f0 !important; }
+
+.dark-toggle {
+  background: none;
+  border: 2px solid #6A11CB;
+  border-radius: 50px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #6A11CB;
+  transition: all 0.3s ease;
+}
+.dark-toggle:hover { background: #6A11CB; color: white; }
+</style>
 </head>
 <body>
   <!-- Navbar -->
   <div class="navbar">
     <div class="logo">Math Quest</div>
+    <div class="navbar">
+  <div class="logo">Math Quest</div>
+  <button class="dark-toggle" onclick="toggleDarkMode()" id="darkBtn">🌙 Dark</button>  <!-- ADD THIS -->
+  <div class="xp-section">
     <div class="xp-section">
       <span class="xp-label">XP</span>
       <div class="xp-bar"><div id="xp-progress"></div></div>
@@ -43,7 +70,19 @@
     <p>You completed all levels!</p>
     <button class="btn" onclick="restartGame()">Play Again</button>
   </div>
-
+<script>
+function toggleDarkMode() {
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  localStorage.setItem('darkMode', isDark);
+  document.getElementById('darkBtn').textContent = isDark ? '☀️ Light' : '🌙 Dark';
+}
+if (localStorage.getItem('darkMode') === 'true') {
+  document.body.classList.add('dark');
+  document.getElementById('darkBtn').textContent = '☀️ Light';
+}
+</script>
+<script src="mathgame.js"></script>
   <script src="mathgame.js"></script>
 </body>
 </html>
