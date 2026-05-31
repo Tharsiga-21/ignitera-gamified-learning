@@ -17,38 +17,6 @@ It combines education, gamification, and progress tracking to create a fun and e
 ✅ Fully responsive and modern design  
 ✅ Built with only HTML, CSS, and JavaScript — no frameworks  
 
----
-
-## 📸 Screenshots
-
-<table>
-    <tr>
-        <td align="center" width="50%">
-            <img src="assets/screenshots/image.png" alt="Home Page screenshot" />
-            <br /><strong>Home Page</strong><br />Landing view that introduces Ignitera and its core learning features.
-        </td>
-        <td align="center" width="50%">
-            <img src="assets/screenshots/student-dashboard.png" alt="Student Dashboard screenshot" />
-            <br /><strong>Student Dashboard</strong><br />Student workspace for quick actions, notes, and daily motivation.
-        </td>
-    </tr>
-    <tr>
-        <td align="center" width="50%">
-            <img src="" alt="Teacher Dashboard screenshot" />
-            <br /><strong>Teacher Dashboard</strong><br />Teacher view for managing courses, progress, quizzes, and class notes.
-        </td>
-        <td align="center" width="50%">
-            <img src="" alt="Quiz/Game Page screenshot" />
-            <br /><strong>Quiz/Game Page</strong><br />Game hub with interactive learning challenges that award XP.
-        </td>
-    </tr>
-    <tr>
-        <td align="center" width="50%" colspan="2">
-            <img src="" alt="Leaderboard Page screenshot" />
-            <br /><strong>Leaderboard Page</strong><br />Competitive rankings that highlight top performers and achievements.
-        </td>
-    </tr>
-</table>
 
 ---
 
